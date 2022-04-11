@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: app-studio-docs
+objects:
+  - apiVersion: cloud.redhat.com/v1alpha1
+    kind: Frontend
+    metadata:
+      name: app-studio-docs
+    spec:
+      envName: ${ENV_NAME}
+      title: App Studio Documentation
+      deploymentRepo: TBD
+      frontend:
+        paths:
+          - /apps/app-studio-docs
+      image: ${IMAGE}:${IMAGE_TAG}
+      navItems: 
+      - appId: app-studio-docs
+        title: App Studio Documentation
+        href: "/staging/app-studio-docs"
+      module:
+        manifestLocation: "/apps/app-studio-docs/fed-mods.json"
+        modules:
+          - id: "app-studio-docs"
+            module: "./RootApp"
+            routes: 
+            - pathname: "/staging/app-studio-docs"
+
+parameters:
+  - name: ENV_NAME
+    required: true
+  - name: IMAGE_TAG
+    required: true
+  - name: IMAGE
+    value: TBD
