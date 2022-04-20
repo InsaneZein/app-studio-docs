@@ -22,5 +22,17 @@ plugins.push(
 module.exports = (env) => {
   env && env.analyze === 'true' && plugins.push(new BundleAnalyzerPlugin());
 
+  module.exports = {
+    module: {
+      rules: [
+        {
+          test: /.mdx?$/,
+          use: ['babel-loader',
+                '@mdx-js/loader']
+        }
+      ]
+    }
+  }
+
   return { ...webpackConfig, plugins };
 };
