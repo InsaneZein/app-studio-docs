@@ -1,7 +1,7 @@
 {
     "appStudioDocs": {
         "entry": [
-            "/beta/apps/app-studio-docs/appStudioDocs.1650548310892.f962ba5cf9cac47ee726.js"
+            "/beta/apps/app-studio-docs/appStudioDocs.1650548310892.2d50f51c03c6d6233c24.js"
         ],
         "modules": [
             "/beta/apps/app-studio-docs/css/src_AppEntry_js.2ba133bdaf37f295baf5.css",
@@ -43,7 +43,11 @@
             "/beta/apps/app-studio-docs/css/src_AppEntry_js.2ba133bdaf37f295baf5.css",
             "/beta/apps/app-studio-docs/js/src_AppEntry_js.1650548310835.0fdaa17aeb948a2ab96b.js",
             "/beta/apps/app-studio-docs/css/src_AppEntry_js.2ba133bdaf37f295baf5.css",
-            "/beta/apps/app-studio-docs/js/src_AppEntry_js.1650548310835.f962ba5cf9cac47ee726.js"
+            "/beta/apps/app-studio-docs/js/src_AppEntry_js.1650548310835.f962ba5cf9cac47ee726.js",
+            "/beta/apps/app-studio-docs/css/src_AppEntry_js.2ba133bdaf37f295baf5.css",
+            "/beta/apps/app-studio-docs/js/src_AppEntry_js.1650548310835.e33c973783b6a1cf1338.js",
+            "/beta/apps/app-studio-docs/css/src_AppEntry_js.2ba133bdaf37f295baf5.css",
+            "/beta/apps/app-studio-docs/js/src_AppEntry_js.1650548310835.2d50f51c03c6d6233c24.js"
         ]
     }
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Example from './sample.mdx';
-import { MDXProvider } from '@mdx-js/react';
 
 const SampleComponent = (props) => {
   return (
     <>
-    <span> {props.children} </span>
-    <Example />
+      <span> {props.children} </span>
+      <Example />
     </>
   );
 };
