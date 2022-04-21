@@ -4,11 +4,6 @@ const { resolve } = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const config = require('@redhat-cloud-services/frontend-components-config');
 
-const insightsProxy = {
-  https: false,
-  ...(process.env.BETA && { deployment: 'beta/apps' }),
-};
-
 const webpackProxy = {
   deployment: process.env.BETA ? 'beta/apps' : 'apps',
   useProxy: true,
@@ -21,9 +16,8 @@ const webpackProxy = {
 const { config: webpackConfig, plugins } = config({
   rootFolder: resolve(__dirname, '../'),
   debug: true,
-  sassPrefix: '.rbac, .my-user-access',
   client: { overlay: false },
-  ...(process.env.PROXY ? webpackProxy : insightsProxy),
+  ...webpackProxy
 });
 
 plugins.push(
@@ -38,20 +32,16 @@ plugins.push(
   })
 );
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /.mdx?$/,
-        use: [
-          'babel-loader',
-          '@mdx-js/loader'
-        ]
-        /** @type {import('@mdx-js/loader').Options} */
-      }
-    ]
-  }
-}
+webpackConfig.module.rules.push({
+  test: /\.mdx?$/,
+  use: [
+    {
+      loader: '@mdx-js/loader',
+      /** @type {import('@mdx-js/loader').Options} */
+      options: {}, // we will need some of this
+  },
+  ]
+});
 
 module.exports = (env) => {
   env && env.analyze === 'true' && plugins.push(new BundleAnalyzerPlugin());

@@ -19,20 +19,16 @@ plugins.push(
   })
 );
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /.mdx?$/,
-        use: [
-          'babel-loader',
-          '@mdx-js/loader'
-        ]
-        /** @type {import('@mdx-js/loader').Options} */
-      }
-    ]
-  }
-}
+webpackConfig.module.rules.push({
+  test: /\.mdx?$/,
+  use: [
+    {
+      loader: '@mdx-js/loader',
+      /** @type {import('@mdx-js/loader').Options} */
+      options: {}, // we will need some of this
+  },
+  ]
+});
 
 module.exports = (env) => {
   env && env.analyze === 'true' && plugins.push(new BundleAnalyzerPlugin());

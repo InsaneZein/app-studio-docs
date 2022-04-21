@@ -7,9 +7,7 @@ const SampleComponent = (props) => {
   return (
     <>
     <span> {props.children} </span>
-    <MDXProvider components={components}>
-      <Example />
-    </MDXProvider>
+    <Example />
     </>
   );
 };
