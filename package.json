@@ -11,7 +11,7 @@
         "lint": "eslint src",
         "patch:hosts": "fec patch-etc-hosts",
         "test": "jest",
-        "build": "fec build --webpack-config config/dev.webpack.config.js"
+        "build": "fec build --webpack-config config/prod.webpack.config.js"
     },
     "dependencies": {
         "@mdx-js/mdx": "^2.1.1",
