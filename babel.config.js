@@ -25,5 +25,6 @@ module.exports = {
       },
       'react-icons',
     ],
+    '@babel/proposal-object-rest-spread'
   ],
 };
