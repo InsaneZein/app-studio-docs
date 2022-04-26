@@ -6,6 +6,9 @@ module.exports = {
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   roots: ['<rootDir>/src/'],
+  transform: {
+    "^.+\\.(md|mdx)$": "jest-transformer-mdx",
+  },
   transformIgnorePatterns: ['/node_modules/(?!@redhat-cloud-services)', '/node_modules/(?!@patternfly)'],
   testEnvironment: 'jest-environment-jsdom',
   moduleDirectories: [

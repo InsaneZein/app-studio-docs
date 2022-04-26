@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Routes } from './Routes';
+import { MDXProvider } from '@mdx-js/react';
+import { ReactMarkDown } from 'react-markdown';
+import { remarkGfm } from 'remark-gfm';
 import './App.scss';
 
 const App = () => {
@@ -16,7 +19,17 @@ const App = () => {
     };
   }, []);
 
-  return <Routes />;
+  const components = {
+    h1: props => {
+      <h1 style={{color: "blue"}} {...props} />
+    }
+  }
+
+  return (
+    <MDXProvider components={components}>
+      <Routes />;
+    </MDXProvider>
+  )
 };
 
 export default App;
