@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const config = require('@redhat-cloud-services/frontend-components-config');
-const { default: remarkGfm } = require('remark-gfm');
+// const { default: remarkGfm } = require('remark-gfm');
 const { config: webpackConfig, plugins } = config({
   rootFolder: resolve(__dirname, '../'),
   sassPrefix: '.app-studio-docs, .appStudioDocs',
@@ -19,7 +19,11 @@ webpackConfig.module.rules.push({
     {
       loader: '@mdx-js/loader',
       /** @type {import('@mdx-js/loader').Options} */
-      options: {remarkPlugins: [remarkGfm]}, // we will need some of this
+      options: {
+        plugins: [
+          { remarkPlugins: [remarkGfm] },
+        ]
+      }, // we will need some of this
     },
   ],
 });

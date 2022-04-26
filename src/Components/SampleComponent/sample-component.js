@@ -7,7 +7,7 @@ const SampleComponent = (props) => {
   return (
     <>
       <span> {props.children} </span>
-      <Example remarkPlugins={[remarkGfm]}/>
+      <Example />
     </>
   );
 };
