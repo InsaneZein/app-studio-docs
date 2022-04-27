@@ -1,7 +1,6 @@
 const { resolve } = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const config = require('@redhat-cloud-services/frontend-components-config');
-const { default: remarkGfm } = require('remark-gfm');
 
 const webpackProxy = {
   deployment: process.env.BETA ? 'beta/apps' : 'apps',
@@ -26,22 +25,21 @@ plugins.push(
   })
 );
 
-webpackConfig.module.rules.push({
-  test: /\.mdx?$/,
-  use: [
-    {
-      loader: '@mdx-js/loader',
-      /** @type {import('@mdx-js/loader').Options} */
-      options: {
-        plugins: [
-          { remarkPlugins: [remarkGfm] },
-        ]
-      }, // we will need some of this
-    },
-  ],
-});
-
-module.exports = (env) => {
+module.exports = async (env) => {
+  const { default: remarkGfm } = await import('remark-gfm');
   env && env.analyze === 'true' && plugins.push(new BundleAnalyzerPlugin());
+
+  webpackConfig.module.rules.push({
+    test: /\.mdx?$/,
+    use: [
+      {
+        loader: '@mdx-js/loader',
+        /** @type {import('@mdx-js/loader').Options} */
+        options: {
+          plugins: [{ remarkPlugins: [remarkGfm] }],
+        }, // we will need some of this
+      },
+    ],
+  });
   return { ...webpackConfig, plugins };
 };
