@@ -36,7 +36,7 @@ module.exports = async (env) => {
         loader: '@mdx-js/loader',
         /** @type {import('@mdx-js/loader').Options} */
         options: {
-          plugins: [{ remarkPlugins: [remarkGfm] }],
+          remarkPlugins: [remarkGfm],
         }, // we will need some of this
       },
     ],
