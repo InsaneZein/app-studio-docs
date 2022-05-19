@@ -37,6 +37,7 @@ module.exports = async (env) => {
         /** @type {import('@mdx-js/loader').Options} */
         options: {
           remarkPlugins: [remarkGfm],
+          providerImportSource: '@mdx-js/react',
         },
       },
     ],

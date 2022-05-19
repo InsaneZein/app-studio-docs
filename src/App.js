@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Routes } from './Routes';
 import { MDXProvider } from '@mdx-js/react';
-import { Text, TextVariants, List, ListItem } from '@patternfly/react-core';
+import { Text, TextVariants, List, ListItem, TextContent, ListComponent } from '@patternfly/react-core';
 import './App.scss';
 
 const App = () => {
@@ -19,17 +19,72 @@ const App = () => {
   }, []);
 
   const components = {
-    h1: props => <Text component={[...props, TextVariants.h1]}/>,
-    h2: props => <Text component={[...props, TextVariants.h2]}/>,
-    h3: props => <Text component={[...props, TextVariants.h3]}/>,
-    h4: props => <Text component={[...props, TextVariants.h4]}/>,
-    h5: props => <Text component={[...props, TextVariants.h5]}/>,
-    h6: props => <Text component={[...props, TextVariants.h6]}/>,
-    a: props => <Text component={[...props, TextVariants.a]}/>,
-    p: props => <Text component={[...props, TextVariants.p]}/>,
-    li: props => <ListItem component={[...props]}/>,
-    ul: props => <List component={[...props]}/>,
-    
+    h1: props => {
+      return (
+      <TextContent>
+        <Text {...props} component={TextVariants.h1}/>
+      </TextContent>
+      )
+    },
+    h2: props => {
+      return (
+      <TextContent>
+        <Text {...props} component={TextVariants.h2}/>
+      </TextContent>
+      )
+    },
+    h3: props => {
+      return (
+      <TextContent>
+        <Text {...props} component={TextVariants.h3}/>
+      </TextContent>
+      )
+    },
+    h4: props => {
+      return (
+      <TextContent>
+        <Text {...props} component={TextVariants.h4}/>
+      </TextContent>
+      )
+    },
+    h5: props => {
+      return (
+      <TextContent>
+        <Text {...props} component={TextVariants.h5}/>
+      </TextContent>
+      )
+    },
+    h6: props => {
+      return (
+      <TextContent>
+        <Text {...props} component={TextVariants.h6}/>
+      </TextContent>
+      )
+    },
+    a: props => {
+      return (
+        <TextContent>
+          <Text {...props} component={TextVariants.a}/>
+        </TextContent>
+      )
+    },
+    p: props => {
+      return (
+        <TextContent>
+          <Text {...props} component={TextVariants.p}/>
+        </TextContent>
+      )
+    },
+    li: props => {
+      return (
+        <ListItem {...props}/>
+      )
+    },
+    ol: props => {
+      return (
+        <List {...props} component={ListComponent.ol}/>
+      )
+    },
   };
 
   return (
