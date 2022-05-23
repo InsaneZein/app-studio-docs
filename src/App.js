@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Routes } from './Routes';
 import { MDXProvider } from '@mdx-js/react';
 import { Text, TextVariants, List, ListItem, TextContent, ListComponent } from '@patternfly/react-core';
+import { Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 import './App.scss';
 
 const App = () => {
@@ -85,7 +86,14 @@ const App = () => {
         <List {...props} component={ListComponent.ol}/>
       )
     },
+    thead: props => {
+      return (
+        <Thead {...props}>
+        </Thead>
+      )
+    }
   };
+
 
   return (
     <MDXProvider components={components}>
