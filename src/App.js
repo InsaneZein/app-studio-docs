@@ -10,10 +10,10 @@ const App = () => {
   const history = useHistory();
 
   useEffect(() => {
-    insights.chrome.init();
+    window?.insights?.chrome.init();
 
-    insights.chrome.identifyApp('app-studio-docs');
-    const unregister = insights.chrome.on('APP_NAVIGATION', (event) => history.push(`/${event.navId}`));
+    window?.insights?.chrome.identifyApp('app-studio-docs');
+    const unregister = window?.insights?.chrome.on('APP_NAVIGATION', (event) => history.push(`/${event.navId}`));
     return () => {
       unregister();
     };

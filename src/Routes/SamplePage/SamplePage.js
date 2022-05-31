@@ -9,7 +9,7 @@ const SampleComponent = lazy(() => import('../../Components/SampleComponent/samp
 
 const SamplePage = () => {
   useEffect(() => {
-    insights?.chrome?.appAction?.('sample-page');
+    window?.insights?.chrome?.appAction?.('sample-page');
   }, []);
 
   return (
