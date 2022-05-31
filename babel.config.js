@@ -1,16 +1,8 @@
 module.exports = {
-  presets: [
-    // Polyfills
-    '@babel/env',
-    // Allow JSX syntax
-    '@babel/react',
-  ],
+  presets: ['@babel/preset-env', '@babel/preset-react'],
   plugins: [
-    // Put _extends helpers in their own file
     '@babel/plugin-transform-runtime',
-    // Devs tend to write `import { someIcon } from '@patternfly/react-icons';`
-    // This transforms the import to be specific which prevents having to parse 2k+ icons
-    // Also prevents potential bundle size blowups with CJS
+    '@babel/plugin-syntax-dynamic-import',
     [
       'transform-imports',
       {
@@ -25,6 +17,6 @@ module.exports = {
       },
       'react-icons',
     ],
-    '@babel/proposal-object-rest-spread'
+    '@babel/proposal-object-rest-spread',
   ],
 };
