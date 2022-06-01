@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Routes } from './Routes';
 import { MDXProvider } from '@mdx-js/react';
-import { Text, TextVariants, List, ListItem, TextContent, ListComponent } from '@patternfly/react-core';
+import { Text, TextVariants, List, ListItem, TextContent, ListComponent, Title } from '@patternfly/react-core';
 import { Thead, Tr, Tbody, Td } from '@patternfly/react-table';
 import './App.scss';
 
@@ -23,42 +23,42 @@ const App = () => {
     h1: (props) => {
       return (
         <TextContent>
-          <Text {...props} component={TextVariants.h1} />
+          <Title headingLevel='h1' size={TitleSizes['4xl']} {...props} />
         </TextContent>
       );
     },
     h2: (props) => {
       return (
         <TextContent>
-          <Text {...props} component={TextVariants.h2} />
+          <Title headingLevel="h2" size="3xl" {...props} />
         </TextContent>
       );
     },
     h3: (props) => {
       return (
         <TextContent>
-          <Text {...props} component={TextVariants.h3} />
+          <Title headingLevel="h3" size={TitleSizes['2xl']} {...props} />
         </TextContent>
       );
     },
     h4: (props) => {
       return (
         <TextContent>
-          <Text {...props} component={TextVariants.h4} />
+          <Title headingLevel="h4" size="xl" {...props} />
         </TextContent>
       );
     },
     h5: (props) => {
       return (
         <TextContent>
-          <Text {...props} component={TextVariants.h5} />
+          <Title headingLevel="h5" size={TitleSizes.lg} {...props} />
         </TextContent>
       );
     },
     h6: (props) => {
       return (
         <TextContent>
-          <Text {...props} component={TextVariants.h6} />
+          <Title headingLevel="h6" size="md" {...props} />
         </TextContent>
       );
     },
