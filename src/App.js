@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Routes } from './Routes';
 import { MDXProvider } from '@mdx-js/react';
-import { Text, TextVariants, List, ListItem, TextContent, ListComponent, Title } from '@patternfly/react-core';
+import { Text, TextVariants, List, ListItem, TextContent, ListComponent, Title, TitleSizes } from '@patternfly/react-core';
 import { Thead, Tr, Tbody, Td } from '@patternfly/react-table';
 import './App.scss';
 
@@ -23,7 +23,7 @@ const App = () => {
     h1: (props) => {
       return (
         <TextContent>
-          <Title headingLevel='h1' size={TitleSizes['4xl']} {...props} />
+          <Title headingLevel="h1" size={TitleSizes['4xl']} {...props} />
         </TextContent>
       );
     },
