@@ -21,7 +21,6 @@
         "@patternfly/react-table": "^4.30.3",
         "@redhat-cloud-services/frontend-components": "^3.6.1",
         "classnames": "^2.3.1",
-        "jest-transformer-mdx": "^2.2.0",
         "mdx.macro": "^0.2.9",
         "prop-types": "^15.8.1",
         "react": "17.0.2",
