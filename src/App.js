@@ -21,46 +21,22 @@ const App = () => {
 
   const components = {
     h1: (props) => {
-      return (
-        <TextContent>
-          <Title headingLevel="h1" size={TitleSizes['4xl']} {...props} />
-        </TextContent>
-      );
+      return <Title headingLevel="h1" size={TitleSizes['4xl']} {...props} />;
     },
     h2: (props) => {
-      return (
-        <TextContent>
-          <Title headingLevel="h2" size="3xl" {...props} />
-        </TextContent>
-      );
+      return <Title headingLevel="h2" size={TitleSizes['3xl']} {...props} />;
     },
     h3: (props) => {
-      return (
-        <TextContent>
-          <Title headingLevel="h3" size={TitleSizes['2xl']} {...props} />
-        </TextContent>
-      );
+      return <Title headingLevel="h3" size={TitleSizes['2xl']} {...props} />;
     },
     h4: (props) => {
-      return (
-        <TextContent>
-          <Title headingLevel="h4" size="xl" {...props} />
-        </TextContent>
-      );
+      return <Title headingLevel="h4" size={TitleSizes['xl']} {...props} />;
     },
     h5: (props) => {
-      return (
-        <TextContent>
-          <Title headingLevel="h5" size={TitleSizes.lg} {...props} />
-        </TextContent>
-      );
+      return <Title headingLevel="h5" size={TitleSizes.lg} {...props} />;
     },
     h6: (props) => {
-      return (
-        <TextContent>
-          <Title headingLevel="h6" size="md" {...props} />
-        </TextContent>
-      );
+      return <Title headingLevel="h6" size={TitleSizes['md']} {...props} />;
     },
     a: (props) => {
       return (
