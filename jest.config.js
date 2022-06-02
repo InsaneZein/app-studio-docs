@@ -6,11 +6,8 @@ module.exports = {
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   roots: ['<rootDir>/src/'],
+  testRegex: '(/__tests__/.*|(\\.|/)((?<!ct.)test|(?<!ct.)spec))\\.[jt]sx?$',
   transformIgnorePatterns: ['/node_modules/(?!@redhat-cloud-services)', '/node_modules/(?!@patternfly)'],
   testEnvironment: 'jest-environment-jsdom',
-  moduleDirectories: [
-    'node_modules',
-    './src', //the root directory
-  ],
   setupFilesAfterEnv: ['<rootDir>/config/jest.setup.js'],
 };

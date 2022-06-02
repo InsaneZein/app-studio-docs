@@ -1,0 +1,9 @@
+{
+  "component": {
+    "componentFolder": "src",
+    "testFiles": "**/**/*.ct.spec.js",
+    "viewportHeight": 500,
+    "viewportWidth": 700
+  },
+  "video": false
+}
